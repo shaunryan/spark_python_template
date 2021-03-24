@@ -1,0 +1,4 @@
+site_name: ShaunRyan
+nav:
+    - About: about.md
+theme: readthedocs
