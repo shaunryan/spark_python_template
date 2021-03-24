@@ -1,6 +1,17 @@
 # Introduction
 
+Template project for running spark development locally with an IDE
 
+# Dependencies
+
+Requires spark installed locally, SPARK_HOME set and $SPARK_HOME/bin set on the path.
+Also add the following to conf at `$SPARK_HOME/conf/spark_defaults.conf` in order to use delta lake.
+
+```
+spark.jars.packages               io.delta:delta-core_2.12:0.8.0
+spark.sql.extensions              io.delta.sql.DeltaSparkSessionExtension
+spark.sql.catalog.spark_catalog   org.apache.spark.sql.delta.catalog.DeltaCatalog
+```
 
 # Setup
 
