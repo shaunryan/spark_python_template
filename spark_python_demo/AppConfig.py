@@ -1,5 +1,4 @@
 import os
-# from .SparkContext import log
 
 
 def _get_env(variable:str): 
@@ -11,7 +10,6 @@ def _get_env(variable:str):
 
     else:
         msg = f"Environment variable '{variable}' not found"
-        # log.error(msg)
 
         raise Exception(msg)    
 
@@ -19,9 +17,11 @@ def _get_env(variable:str):
 def get_environment():
     return _get_env("ENVIRONMENT")
 
+def get_hudi_data_root():
+    return _get_env("HUDI_DATAROOT")
 
-def get_data_root():
-    return _get_env("ENVIRONMENT")
+def get_delta_data_root():
+    return _get_env("DELTA_DATAROOT")
 
 def get_log_level():
     return _get_env("LOG_LEVEL")

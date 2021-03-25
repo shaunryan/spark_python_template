@@ -12,7 +12,7 @@ def inside(p):
     x, y = random.random(), random.random()
     return x*x + y*y < 1
 
-def execute():
+def go():
 
     log.info("starting")
     
@@ -21,7 +21,7 @@ def execute():
     count = spark.range(0, NUM_SAMPLES).filter(inside("id")).count()
     log.info("Pi is roughly %f" % (4.0 * count / NUM_SAMPLES))
 
-    spark.stop()
+    # spark.stop()
 
 
 
